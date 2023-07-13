@@ -6,11 +6,13 @@
                     src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/wdev.svg"
                     alt="WDEV">
             </a>
-            <img id="menu-button"
+            <img 
+                v-on:click="openMenu"
+                id="menu-button"
                 src="https://raw.githubusercontent.com/william-costa/wdev-mock-site-resources/master/assets/images/menu.svg"
                 alt="Abrir menu">
 
-            <div id="menu-overlay" v-if="menuActive"></div>
+            <div v-on:click="closeMenu" id="menu-overlay" v-if="menuActive"></div>
 
             <div id="menu-items" :class="{active:menuActive}">
 
@@ -37,6 +39,14 @@ export default {
         return {
             menuActive: false
         }
+    },
+    methods:{
+        openMenu: function () {
+            this.menuActive = true;
+        },
+        closeMenu: function () {
+            this.menuActive = false;
+        }
     }
 }
 
@@ -55,7 +65,8 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-
+    height:60px;
+    align-items: center;
 }
 
 #logo {
@@ -89,13 +100,13 @@ nav {
     background-color: var(--color-background-nav);
     width: 60%;
     height: 100vh;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
-#menu-items.active{
+#menu-items .active{
     display: flex;
 }
 
@@ -110,6 +121,34 @@ ul li {
 
 ul li a {
     color: var(--color-text-light);
+}
+
+@media (min-width: 700px) {
+
+    #menu-button,
+    #menu-logo,
+    #menu-overlay{
+        display: none;
+    }
+
+    #menu-items{
+        display: flex;
+        position: static;
+        height: 60px;
+        width: auto;
+    }
+
+    ul{
+        display: flex;
+        height: 60px;
+        align-items: center;
+    }
+
+    ul li{
+        margin: 0;
+        margin-left:20px;
+    }
+
 }
 
 </style>
