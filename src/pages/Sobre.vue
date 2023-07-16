@@ -34,4 +34,5 @@ main {
     margin-bottom: 40px;
     color: var(--color-text-dark);
 } 
+
 </style>
