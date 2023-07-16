@@ -59,5 +59,21 @@ main {
 .video a {
     color: var(--color-text-dark);
     font-weight: 600;
+    text-align: center;
+}
+
+@media (min-width:700px){
+    .videos {
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .video {
+        margin-right: 30px;
+        width:300px;
+    }
+
+
 }
 </style>

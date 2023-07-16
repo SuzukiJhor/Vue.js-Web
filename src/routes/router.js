@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import Home from '@/pages/Home.vue'
 import Videos from '@/pages/Videos.vue'
+import Sobre from '@/pages/Sobre.vue'
 
 const routes = [
     {
@@ -14,6 +15,10 @@ const routes = [
     {
         path: '/videos',
         component:Videos
+    },
+    {
+        path: '/sobre',
+        component:Sobre
     }
 ];
 
