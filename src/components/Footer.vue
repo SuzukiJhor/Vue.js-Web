@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <a class="socialLink" v-for="(socialLink, index) in socialLinks" :key="index" :href="socialLink.link">
+        <a class="socialLink" v-for="(socialLink, index) in socialLinks" :key="index" :href="socialLink.link" target="_blank">
             <img :src="socialLink.icon" :alt="socialLink.label" :title="socialLink.label">
         </a>
     </footer>
