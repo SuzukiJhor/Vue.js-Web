@@ -37,7 +37,7 @@ export default {
     name: 'HeaderComponent',
     data() {
         return {
-            menuActive: false
+            menuActive: true
         }
     },
     methods:{
@@ -106,7 +106,7 @@ nav {
     align-items: center;
 }
 
-#menu-items .active{
+#menu-items.active{
     display: flex;
 }
 
@@ -117,6 +117,7 @@ ul {
 
 ul li {
     margin: 20px 0px;
+    display: flex;
 }
 
 ul li a {
